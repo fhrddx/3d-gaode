@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/3d-gaode/static/css/main.44b2f739.css",
+    "main.css": "/3d-gaode/static/css/main.c92ca008.css",
     "main.js": "/3d-gaode/static/js/main.1633ce6c.js",
     "static/js/453.117b0875.chunk.js": "/3d-gaode/static/js/453.117b0875.chunk.js",
     "static/media/wave.png": "/3d-gaode/static/media/wave.3b7a14de3301d2e43a06.png",
     "static/media/taper2.glb": "/3d-gaode/static/media/taper2.85ef5e9cb08b6cefb994.glb",
     "static/media/taper1-p.glb": "/3d-gaode/static/media/taper1-p.ddae3b4be8f7a3d97f43.glb",
     "index.html": "/3d-gaode/index.html",
-    "main.44b2f739.css.map": "/3d-gaode/static/css/main.44b2f739.css.map",
+    "main.c92ca008.css.map": "/3d-gaode/static/css/main.c92ca008.css.map",
     "main.1633ce6c.js.map": "/3d-gaode/static/js/main.1633ce6c.js.map",
     "453.117b0875.chunk.js.map": "/3d-gaode/static/js/453.117b0875.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.44b2f739.css",
+    "static/css/main.c92ca008.css",
     "static/js/main.1633ce6c.js"
   ]
 }
