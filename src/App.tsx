@@ -1,19 +1,14 @@
-import React, { useEffect } from 'react';
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
-
- import GeoWorld3 from './GeoWorld/index';
+import GeoWorld3 from './GeoWorld/index';
    
 function App() {
 
   useEffect(() => {
-
-const dom: HTMLElement = document.querySelector('#earth-canvas')!;
-new GeoWorld3({
-  dom
-});
-
-
+    const dom: HTMLElement = document.querySelector('#earth-canvas')!;
+    new GeoWorld3({
+      dom
+    });
   }, [])
 
   return (

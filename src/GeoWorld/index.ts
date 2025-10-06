@@ -10,7 +10,6 @@ export default class GeoWorld3 {
   private renderer: WebGLRenderer;
   private controls: OrbitControls;
 
-
   //尺寸监听器
   private observer: ResizeObserver;
 
@@ -26,46 +25,30 @@ export default class GeoWorld3 {
     this.camera = basic.camera;
     this.camera.position.set(0, -200, 250);
     this.renderer = basic.renderer;
-    //if(basic.controls){
- this.controls = basic.controls!;
-    //}
+    this.controls = basic.controls!;
    
-
-   
-
-
-
-
     this.observer = new ResizeObserver((entries) => {
       if (option.dom) {
         entries.forEach((dom) => {
           const { width, height } = dom.contentRect;
-
           this.renderer.setSize(width, height);
-      this.camera.aspect = width / height;
-      this.camera.updateProjectionMatrix();
-         
+          this.camera.aspect = width / height;
+          this.camera.updateProjectionMatrix();
         });
       }
     });
     if (option.dom) {
       this.observer.observe(option.dom);
     }
-
-
-
     this.offset = 0;
-
     this.createMap();
   }
 
   createMap(){
     const group = new Group();
     this.scene.add(group);
-
     this.createMainMesh();
     this.createTrayMesh();
-
     this.render();
   }
 
@@ -86,11 +69,9 @@ export default class GeoWorld3 {
     const hemiLight = new HemisphereLight(0xffffff, 0x8d8d8d, 2);
     hemiLight.position.set(100, 0, 0);
     this.scene.add(hemiLight);
-
     const dirLight = new DirectionalLight(0xffffff, 1.5);
     dirLight.position.set(100, 10, 10);
     this.scene.add(dirLight);
-
     //加载模型
     const model: any = await this.loadOneModel('../../../static/models/taper2.glb');
     //给模型换一种材质
@@ -109,7 +90,6 @@ export default class GeoWorld3 {
       emissiveIntensity: 0.2,
       //blending: THREE.AdditiveBlending
     });
-    //model.material = material;
     model.traverse((child: any) => {
       if (child.isMesh) {
         child.material = material;

@@ -13,7 +13,6 @@ export class Basic {
   
   constructor(dom: HTMLElement) {
     this.dom = dom;
-
     //第1步，Scene，初始化场景
     this.scene = new THREE.Scene();
     //第2步，Camera，初始化照相机，并摆好照相机的位置，之所以z轴变成-250，就是最先看到中国
@@ -31,11 +30,8 @@ export class Basic {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.dom.appendChild(this.renderer.domElement);
 
-
-  
     this.setControls();
   }
-
 
   //设置轨道控制器，主要目的是实现放大缩小、拖拽、点击， 原理是控制照相机的运行轨迹
   setControls() {
