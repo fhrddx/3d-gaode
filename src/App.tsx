@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import './App.css';
 import GeoWorld3 from './GeoWorld/index';
    
 function App() {

@@ -1,3 +1,3 @@
 export interface IGeoWorld {
-    dom: HTMLElement
+  dom: HTMLElement
 }
