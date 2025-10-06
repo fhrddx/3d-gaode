@@ -2,7 +2,11 @@ import { Color, DirectionalLight, Group, HemisphereLight, Mesh, MeshStandardMate
 import { IGeoWorld } from "../interfaces/IGeoWorld";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { Basic } from "./Basic";
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+
+const url1 = require('../static/models/taper1-p.glb');
+const url2 = require('../static/models/taper2.glb');
+const url3 = require('../static/images/wave.png');
 
 export default class GeoWorld3 {
   private scene: Scene;
@@ -66,14 +70,16 @@ export default class GeoWorld3 {
   }
 
   async createMainMesh() {
-    const hemiLight = new HemisphereLight(0xffffff, 0x8d8d8d, 2);
+    const hemiLight = new HemisphereLight(0xffffff, 0x8d8d8d, 15);
     hemiLight.position.set(100, 0, 0);
     this.scene.add(hemiLight);
-    const dirLight = new DirectionalLight(0xffffff, 1.5);
+
+    const dirLight = new DirectionalLight(0xffffff, 5);
     dirLight.position.set(100, 10, 10);
     this.scene.add(dirLight);
+    
     //加载模型
-    const model: any = await this.loadOneModel('../../../static/models/taper2.glb');
+    const model: any = await this.loadOneModel(url2);
     //给模型换一种材质
     const material = new MeshStandardMaterial({
       //自身颜色
@@ -119,9 +125,9 @@ export default class GeoWorld3 {
   }
 
   async createTrayMesh() {
-    const model: any = await this.loadOneModel('../../../static/models/taper1-p.glb');
+    const model: any = await this.loadOneModel(url1);
     const loader = new TextureLoader();
-    const texture = await loader.loadAsync('../../../static/images/wave.png');
+    const texture = await loader.loadAsync(url3);
     const { width, height } = texture.image;
     this.frameX = width / height;
     texture.wrapS = texture.wrapT = RepeatWrapping;

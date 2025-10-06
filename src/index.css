@@ -22,6 +22,7 @@ html,body{
   body{
     overflow: hidden;
     position: relative;
+    background: #000000;
   }
   #earth-canvas{
     height: 100%;
@@ -45,4 +46,3 @@ html,body{
     padding: 4px 8px 5px 8px;
     border-radius: 3px;
   }
-  

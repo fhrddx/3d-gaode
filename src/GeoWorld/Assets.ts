@@ -8,11 +8,9 @@ export interface IResources {
   textures?: ITextures[],
 }
 
-const filePath = './images/'
+const filePath = '../static/images/'
 const fileSuffix = [
-  'grid',
-  'gridBlack',
-  'bg'
+  'wave'
 ]
 
 const textures = fileSuffix.map(item => {
